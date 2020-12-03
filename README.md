@@ -1,1 +1,1 @@
-# SertifyMe
+# SertifyMe - Ceritificate Generator
