@@ -23,12 +23,10 @@ def shorten( text, _max ):
     else :
         return -1
 
-
 # Add name
 def make_certi( new_name ):
-
     #load template
-    serti = Image.open('Templates/certificate01.jpg')
+    serti = Image.open('Templates/certificate02.jpg')
     draw = ImageDraw.Draw(serti)
 
     # Load font
@@ -37,13 +35,12 @@ def make_certi( new_name ):
     # Check sizes and if it is needed to be shortened
     if ( len( new_name ) > 20 ):
         new_name = shorten( new_name, 20 )
-
+ 
     # Insert text into image template for name
     location = (720, 345)
     text_color = (0, 137, 209)
     draw.text(location, new_name, fill = text_color, font = font)
-
-    '''
+ 
     ## this is for template name certificate02
 
     # font for speaker
@@ -51,20 +48,19 @@ def make_certi( new_name ):
     speaker_name = 'Samriddhi Agarwal'
 
     # Insert text into image template for speaker
-    location_s = (720, 345) # need to edit
+    location_s = (120, 590) # need to edit
     text_color_s = (164, 226, 228)
     draw.text(location_s, speaker_name, fill = text_color_s, font = font_s)
 
     # font for speaker position
-    font_p = ImageFont.truetype('Fonts/Lato-Regular.ttf', 10)
+    font_p = ImageFont.truetype('Fonts/Lato-Regular.ttf', 16)
     position_name = 'CEO SertifyMe'
 
     # Insert text into image template for speaker position
-    location_p = (720, 345)  # need to edit
+    location_p = (120, 645)  # need to edit
     text_color_p = (0, 112, 192)
     draw.text(location_p, position_name, fill = text_color_p, font = font_p)
-    
-    '''
+ 
 
     if not os.path.exists( 'Certificates' ):
         os.makedirs( 'Certificates' )
